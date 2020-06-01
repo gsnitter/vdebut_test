@@ -1,0 +1,18 @@
+version: '3'
+# pecl install xdebug im Container
+services:
+    vdebug_test:
+        image: vdebug-test:latest
+        container_name: vdebug_test
+        tty: true
+        ports:
+            - '81:80'
+        volumes:
+            - './:/var/www/html'
+            - './php.ini:/etc/php/7.4/apache2/php.ini'
+            - './xdebug.so:/usr/lib/php/20190902/xdebug.so'
+        networks:
+            - vdebug_test
+        command: bash -c "/usr/sbin/apache2ctl -D FOREGROUND"
+networks:
+    vdebug_test:
