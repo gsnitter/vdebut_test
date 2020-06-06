@@ -2,7 +2,8 @@ version: '3'
 # pecl install xdebug im Container
 services:
     vdebug_test:
-        image: vdebug-test:latest
+        # image: vdebug-test:latest
+        image: vdebug-test:4165e46dd82e
         container_name: vdebug_test
         tty: true
         ports:
