@@ -1,10 +1,13 @@
 <?php
 require_once 'Rechner.php';
 
-echo "Passt<br>";
-
+$time = date('H:i:s');
 $rechner = new Rechner();
-$a = $rechner->getUmfangByRadius(1);
+$umfang = $rechner->getUmfangByRadius(3);
 
-echo "Ergebnis {$a}<br>";
+echo "Zeit: $time <br>";
+echo "Umfang: $umfang <br>";
+
+echo "<hr>";
 phpinfo();
+

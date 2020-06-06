@@ -1,0 +1,20 @@
+xdebug ist auf version 2.9.5
+localhost:81 zeigt die index.php
+Einfach F5 und Browser F5 hat schon mal angehalten, aber das Pathmapping war ja noch nicht gesetzt.
+
+Wir brauchen
+    let g:vdebug_options.path_maps = {"/container/path": "/host/path"}
+also
+    let g:vdebug_options.path_maps = {"/var/www/html": "/mnt/home_daten/Projekte/Demos/vdebug_test"}
+
+Mehr war wirklich nicht zu tun bei der php.ini
+    zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so
+    xdebug.remote_autostart=1
+    xdebug.remote_enable=1
+    xdebug.remote_handler=dbgp
+    xdebug.remote_host=localhost
+    xdebug.remote_port=9000
+    xdebug.remote_connect_back=1
+    xdebug.remote_host=172.17.0.0
+    xdebug.remote_log=/tmp/xdebug.log
+    xdebug.idekey=snitter
