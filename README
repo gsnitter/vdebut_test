@@ -1,3 +1,8 @@
+Angeblich braucht es im Container noch
+    export XDEBUG_SESSION=snitter
+
+docker build -t sni:php8.2.with.vdebug . # Das baut das Image aus den Commands des Dockerfile
+
 xdebug ist auf version 2.9.5
 localhost:81 zeigt die index.php
 Einfach F5 und Browser F5 hat schon mal angehalten, aber das Pathmapping war ja noch nicht gesetzt.

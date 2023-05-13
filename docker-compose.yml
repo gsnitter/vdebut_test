@@ -2,17 +2,17 @@ version: '3'
 # pecl install xdebug im Container
 services:
     vdebug_test:
-        # image: vdebug-test:latest
-        # image: php:7.4-apache
-        image: scnd/php8.1
-        container_name: vdebug_test
+        image: sni:php8.2.with.vdebug
+        container_name: vdt
         tty: true
         ports:
             - '81:80'
         volumes:
             - './:/var/www/html'
             - './php.ini:/etc/php/7.4/apache2/php.ini'
-            - './xdebug.so:/usr/lib/php/20190902/xdebug.so'
+        # So müsste es bei medi gehen, unser docker-compose ist aber alt, deshalb in der php.ini einfach xdebug.client_host=172.17.0.1
+        # extra_hosts:
+        # - "host.docker.internal:host-gateway"
         networks:
             - vdebug_test
         command: bash -c "/usr/sbin/apache2ctl -D FOREGROUND"
