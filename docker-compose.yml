@@ -3,7 +3,8 @@ version: '3'
 services:
     vdebug_test:
         # image: vdebug-test:latest
-        image: vdebug-test:4165e46dd82e
+        # image: php:7.4-apache
+        image: scnd/php8.1
         container_name: vdebug_test
         tty: true
         ports:
